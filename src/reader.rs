@@ -26,26 +26,26 @@ impl PlatformInfo{
         serde_json::from_str(json_string)
     }
     
-    // #[allow(dead_code)]
-    // pub fn from_user_input() -> Self {
-    //     println!("Enter platform : ");
-    //     let mut platform: String = String::new();
-    //     io::stdin().read_line(&mut platform).unwrap();
+    #[allow(dead_code)]
+    pub fn from_user_input() -> Self {
+        println!("Enter platform : ");
+        let mut platform: String = String::new();
+        io::stdin().read_line(&mut platform).unwrap();
 
-    //     println!("Enter username : ");
-    //     let mut username: String = String::new();
-    //     io::stdin().read_line(&mut username).unwrap();
+        println!("Enter username : ");
+        let mut username: String = String::new();
+        io::stdin().read_line(&mut username).unwrap();
 
-    //     println!("Enter password : ");
-    //     let mut password: String = String::new();
-    //     io::stdin().read_line(&mut password).unwrap();
+        println!("Enter password : ");
+        let mut password: String = String::new();
+        io::stdin().read_line(&mut password).unwrap();
 
-    //     ServiceInfo::new(
-    //         platform.trim().to_string(),
-    //         username.trim().to_string(),
-    //         password.trim().to_string()
-    //     )
-    // }
+        ServiceInfo::new(
+            platform.trim().to_string(),
+            username.trim().to_string(),
+            password.trim().to_string()
+        )
+    }
 
     fn to_json(&self) -> String {
         serde_json::to_string(&self).expect("Failed to serialize to JSON")
